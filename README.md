@@ -24,3 +24,17 @@ The auction’s serverside contains an IAuctionServer interface that extends Rem
 - **AuctionServlet** runs the whole thing, manages standard IO and loading/saving auction state
 
 ## The Clientside
+The clientside contains the IAuctionClient interface and four classes.
+- **AuctionClientImpl** a remote class that has a name and a callback.
+- **FailureDetector** responsible for failure detection, correction and performance measurement.
+- **ConnectionLayer** a wrapper that maintains the server object and an instance of the FailureDetector
+- **ClientServlet** runs an interactive client
+
+# How To Run The System
+Run the AuctionServlet.java in a terminal
+1. Enter a name for the database file
+2. Run the SellerServlet.java in a terminal
+3. Use any of the features, add an auction items
+4. Run the BuyerServlet.java in a terminal
+5. Use any of the features, bid for an item
+6. Enter Q on the AuctionServlet terminal to close the server
