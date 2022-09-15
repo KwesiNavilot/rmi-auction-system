@@ -28,8 +28,17 @@ The clientside contains the IAuctionClient interface and four classes.
 - **AuctionClientImpl** a remote class that has a name and a callback.
 - **FailureDetector** responsible for failure detection, correction and performance measurement.
 - **ConnectionLayer** a wrapper that maintains the server object and an instance of the FailureDetector
-- **ClientServlet** runs an interactive client
+- **ClientServlet** runs an interactive interface based on type of client, be it Seller or Buyer
 
+# Clientside Features
+These are the Clientside features based on client type
+| Seller | Buyer |
+| ----------- | ----------- |
+| View all listed items | View all listed items |
+| Add new items for auction | Bid for auctioning items |
+| View history of auctions | View history of auctions |
+| Check the server load | Check the server load |
+| Quit the application | Quit the application |
 
 # How To Run The System
 1. Run the AuctionServlet.java in a terminal
