@@ -12,3 +12,15 @@ under auction. The Buyer should be able to fetch the list of active auctions and
 
 There is also a Server that should deal with requests from both Seller and Buyer maintaining the appropriate
 details of items, auctions, sellers and buyers.
+
+# Current Implementation
+The implementation covers all of the requirements that were specified in the assignment document. There is a server that lets the users create auction items, view auctions and make bids. The server also notifies bidders when they are outbid or the auction closes, maintains historical records, has the ability save and load its state from file storage. There are two client implementations for Seller and Buyer. The auction system is thread safe to the best of my understanding.
+
+## The Serverside
+The auction’s serverside contains an IAuctionServer interface that extends Remote, an enum ErrorCodes containing error/success codes and four classes.
+- **AuctionServerImpl** implements the core functionality of the server.
+- **AuctionItem** represents auction listings, maintains a list of bids and observers for that item and contains some bidding logic.
+- **Bid** a data model with no logic besides the overloaded toString() method.
+- **AuctionServlet** runs the whole thing, manages standard IO and loading/saving auction state
+
+## The Clientside
